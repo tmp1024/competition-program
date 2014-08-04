@@ -1,5 +1,8 @@
 /*
  * http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0118
+ *
+ * 1‰ñ–Ú
+ *  Å‰‚Éö‚éêŠ‚ª'.'‚É‚È‚Á‚Ä‚¢‚È‚©‚Á‚½
  */
 
 #include <iostream>
@@ -35,11 +38,14 @@ int main()
 			}
 		}
 
+		char mark;
 		for (int i = 0; i < H; i++){
 			for (int j = 0; j < W; j++){
 				if (mp[i][j] != '.'){
 					counter++;
-					dfs(j, i, mp[i][j]);
+					mark = mp[i][j];
+					mp[i][j] = '.';
+					dfs(j, i, mark);
 				}
 			}
 		}
