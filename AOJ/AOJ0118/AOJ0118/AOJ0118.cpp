@@ -3,6 +3,9 @@
  *
  * 1‰ñ–Ú
  *  Å‰‚Éö‚éêŠ‚ª'.'‚É‚È‚Á‚Ä‚¢‚È‚©‚Á‚½
+ *
+ * 2‰ñ–Ú
+ *  “ü—Í‚ª‹t‚¾‚Á‚½
  */
 
 #include <iostream>
@@ -11,7 +14,7 @@
 using namespace std;
 
 int W, H;
-char mp[100][101];
+char mp[110][110];
 
 int dx[] = { 1, 0, -1, 0 };
 int dy[] = { 0, 1, 0, -1 };
@@ -30,7 +33,7 @@ void dfs(int x, int y, char mark)
 
 int main()
 {
-	while (cin >> W >> H && W && H){
+	while (cin >> H >> W && W && H){
 		int counter = 0;
 		for (int i = 0; i < H; i++){
 			for (int j = 0; j < W; j++){
@@ -49,7 +52,7 @@ int main()
 				}
 			}
 		}
-
+		
 		cout << counter << endl;
 	}
 
