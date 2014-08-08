@@ -5,7 +5,6 @@
 #include <iostream>
 #include <cstdio>
 #include <queue>
-#include <utility>
 #include <algorithm>
 
 using namespace std;
@@ -13,8 +12,8 @@ using namespace std;
 const int INF = 1 << 12;
 
 int M, X, Y;
-int field[302][302];
-int d[302][302];
+int field[310][310];
+int d[310][310];
 
 int dx[] = { 1, 0, -1, 0 };
 int dy[] = { 0, 1, 0, -1 };
@@ -27,8 +26,8 @@ int bfs()
 
 	if (field[1][1] == 0) return -1;
 
-	for (int i = 0; i < 302; i++){
-		for (int j = 0; j < 302; j++){
+	for (int i = 0; i < 310; i++){
+		for (int j = 0; j < 310; j++){
 			d[i][j] = INF;
 		}
 	}
@@ -59,8 +58,8 @@ int main()
 	int dx[] = { 0, 1, 0, -1, 0 };
 	int dy[] = { 0, 0, 1, 0, -1 };
 
-	for (int i = 0; i < 302; i++){
-		for (int j = 0; j < 302; j++){
+	for (int i = 0; i < 310; i++){
+		for (int j = 0; j < 310; j++){
 			field[i][j] = INF;
 		}
 	}
