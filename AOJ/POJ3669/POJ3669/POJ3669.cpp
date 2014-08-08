@@ -43,7 +43,7 @@ int bfs()
 		for (int i = 0; i < 4; i++){
 			int nx = p.first + dx[i], ny = p.second + dy[i];
 
-			if (0 < nx && nx < 302 && 0 < ny && ny < 302 && field[nx][ny] - 1 > d[p.first][p.second] && d[nx][ny] == INF){
+			if (0 < nx && nx < 310 && 0 < ny && ny < 310 && field[nx][ny] - 1 > d[p.first][p.second] && d[nx][ny] == INF){
 				que.push(P(nx, ny));
 				d[nx][ny] = d[p.first][p.second] + 1;
 			}
