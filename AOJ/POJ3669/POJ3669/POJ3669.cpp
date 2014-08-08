@@ -1,7 +1,12 @@
+/*
+ * http://poj.org/problem?id=3669
+ */
+
 #include <iostream>
 #include <cstdio>
 #include <queue>
 #include <utility>
+#include <algorithm>
 
 using namespace std;
 
@@ -19,6 +24,8 @@ typedef pair<int, int> P;
 int bfs()
 {
 	queue<P> que;
+
+	if (field[1][1] == 0) return -1;
 
 	for (int i = 0; i < 302; i++){
 		for (int j = 0; j < 302; j++){
@@ -40,7 +47,6 @@ int bfs()
 			if (0 < nx && nx < 302 && 0 < ny && ny < 302 && field[nx][ny] - 1 > d[p.first][p.second] && d[nx][ny] == INF){
 				que.push(P(nx, ny));
 				d[nx][ny] = d[p.first][p.second] + 1;
-				cout << nx << " " << ny << " " << d[nx][ny] << endl;
 			}
 		}
 	}
@@ -71,9 +77,7 @@ int main()
 		for (int j = 0; j < 5; j++){
 			int nx = X + dx[j], ny = Y + dy[j];
 
-			field[nx][ny] = T;
-			//cout << nx << " " << ny << " " << T << endl;
-
+			field[nx][ny] = min(field[nx][ny], T);
 		}
 	}
 
