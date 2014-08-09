@@ -23,7 +23,7 @@ int main()
 	cin.ignore();
 
 	while (n--){
-		int ans = 1000000000;
+		int ans = 10000000;
 
 		getline(cin, str);
 
@@ -39,6 +39,11 @@ int main()
 		}
 
 		sort(num, num + slen);
+
+		if (slen == 2){
+			cout << abs(num[0] - num[1]) << endl;
+			continue;
+		}
 
 		do {
 			if (num[0] == 0 || num[slen / 2] == 0){
