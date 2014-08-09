@@ -1,5 +1,8 @@
 /*
  * http://poj.org/problem?id=2718
+ *
+ * 注意
+ *  next_permutationを使う前には、ソートをしなくてはならない
  */
 
 #include <iostream>
@@ -35,6 +38,8 @@ int main()
 			num[i] = str[i] - '0';
 		}
 
+		sort(num, num + slen);
+
 		do {
 			if (num[0] == 0 || num[slen / 2] == 0){
 				continue;
@@ -43,10 +48,10 @@ int main()
 			int num1 = num[0];
 			int num2 = num[slen / 2];
 			
-			for (int i = 1; i < slen / 2; i++){
+			for (int i = 1; i < (slen / 2); i++){
 				num1 = num1 * 10 + num[i];
 			}
-			for (int i = slen-1; i > slen / 2; i--){
+			for (int i = slen-1; i > (slen / 2); i--){
 				num2 = num2 * 10 + num[i];
 			}
 			ans = min(ans, abs(num1 - num2));
