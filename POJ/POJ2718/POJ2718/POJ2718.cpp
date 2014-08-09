@@ -31,10 +31,16 @@ int main()
 
 		int num[10];
 
+		cout << slen << endl;
+
 		for (int i = 0; i < slen; i++){
 			num[i] = str[i] - '0';
 		}
 
+		if (slen == 2){
+			cout << abs(num[0] - num[1]) << endl;
+			continue;
+		}
 		do {
 			if (num[0] == 0 || num[slen / 2] == 0){
 				continue;
